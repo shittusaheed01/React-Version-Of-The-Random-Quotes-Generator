@@ -8,4 +8,4 @@ This project was made just so I could practice the use of Tailwind with React.
 
 It is also a completely responsive project.
 
-Live version deployed at [Vercel](https://random-quotes.shittusaheed01.vercel.app/)
+Live version deployed at [Vercel](https://react-version-of-the-random-quotes-generator.vercel.app/)
