@@ -1,31 +1,42 @@
-import React, {useState} from 'react';
-
-import ReactMarkdown from "react-markdown"
-
-import "./App.css"
-
-function App(props) {
-  const [text, setText] = useState("")
-  const handleChange = (e) => {
-    setText(e.target.value)
+import React from "react";
+import "./App.css";
+import data from "./data"
+import Quote from './quote';
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      data:data,
+      random:0,
+    }
   }
-  return (
-    <>
-      <div className="container">
-        <div className="editor">
-          <h3 className="title">Editor:</h3>
-          <textarea placeholder="enter your markdown here" onChange={handleChange} value={text} />
-        </div>
-        <div className="previewer">
-          <h3 className="title">Previewer:</h3>
-          {/* <div className="result" /> */}
-          <div className="markdown-body">
-            <ReactMarkdown>{text}</ReactMarkdown>
-          </div>
+
+  handleClick = () => {
+    let randomNumber = Math.floor(Math.random() * this.state.data.length)
+    this.setState({random : randomNumber});
+    console.log(this.state.random, randomNumber, this.state.data[this.state.random])
+  }
+
+  name = () => {
+
+  }
+
+  render() {
+    return (
+      <div className="flex-1 capitalize min-h-screen flex items-center text-center justify-center bg-blue-300">
+        <div className="max-w-lg shadow-2xl bg-white rounded-2xl p-8 ">
+          <h3 className="text-2xl text-gray-700">
+            This is a random quotes generator
+          </h3>
+          <Quote
+            onClick={this.handleClick}
+            name={this.state.data[this.state.random].name}
+            quote={this.state.data[this.state.random].quote}
+          />
         </div>
       </div>
-    </>
-  );
+    );
+  }
 }
 
 export default App;
