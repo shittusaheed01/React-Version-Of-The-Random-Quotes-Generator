@@ -1,0 +1,86 @@
+body {
+  background-color: #777;
+  background-color: darkturquoise;
+  background-color: cadetblue;
+  background-color: #00b3b6;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  max-width: 700px;
+  min-height: 100vh;
+  align-items: center;
+  margin: 0 auto;
+}
+.editor{
+  width: 90%;
+  border-radius: 10px;
+  background-color:#d87373;
+  padding: 10px;
+  margin: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+}
+.previewer{
+  margin: 10px;
+  height: auto;
+  width: 90%;
+  background-color: #f3d5d5;
+  background-color: #edbdbd;
+  /*  */
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.title{
+  font-size: 1.5rem;
+  font-weight: 800;
+  padding: 5px;
+  margin: 0;
+  color:#333;
+  text-align: left;
+}
+.editor textarea{
+  width: 95%;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 1.2rem;
+  /* background-color: aquamarine; */
+  outline: none;
+  border: none;
+  background-color: white;
+  height: 100%;
+  color: black;
+}
+.result{
+  padding: 10px;
+  /* font-size: 1.2rem; */
+}
+
+@media screen and (min-width: 900px){
+  .container{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    column-gap: 2rem;
+    max-width: 1300px;
+  }
+  .editor, .previewer{
+    margin: 40px 0;
+    width: 100%;
+    min-height: 60vh;
+    height: auto;
+    align-self: stretch;
+  }
+  .editor textarea{
+    height: 100%;
+    width: 100%;
+  }
+  .title{
+    font-size: 2.3rem;
+  }
+}
